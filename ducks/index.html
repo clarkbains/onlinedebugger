@@ -1,0 +1,41 @@
+<html> <head> <title>Duck Selector | Online Debugger</title> </head> <body> <!-- Global site tag (gtag.js) - 
+Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160703540-2"></script> 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-160703540-2');
+</script>
+<div style="text-align: center"> <h1>Online Debugger - Duck Selector</h1> <p>The Primary duck isn't doing it for 
+you? Pick a new duck!</p> <hr/> <div id="mainDuck"></div><button onclick="navigateToRandomDuck()">Take Me To a Random Duck</button><p>-----------------------------------</p><div id = "allDaDucks"></div> <hr/>
+<p>If you have any duck ideas please message me on discord or send to ducks[at]clarkbains.com. You can add a new duck yourself via a <a href="https://github.com/clarkbains/onlinedebugger">PR</a></p>
+
+</div> <script> 
+  //Add Ducks Here. Make sure to put a file by the same name in /ducks
+  let quacks = [ 
+{name:"OG Duck", help:"This duck is the og.", link:"duck_0.jpg", author: "Clark"}, 
+{name:"Enhanced Duck", help:"Fan art to help you get your duck on.", link:"duck_1.jpg", author: "Dmitry"},
+{name:"Turleduck", help:"Imagine if a turtle started duckin'", link:"duck_2.jpg", author: "Ryan"},
+{name:"Mr. Carl Quack", help:"he quacc.", link:"duck_3.jpg", author: "Spencer"},
+{name:"Mr. Carl Quack 2", help:"he quaccc.", link:"duck_4.jpg", author: "Spencer"}
+]
+
+function template(quacker){
+  return `<h3>${quacker.name}</h3> <p>${quacker.help}</p> <a href="/?duck=${quacker.link}">View Duck<a/> <p>Created By ${quacker.author}</p><br/>` 
+}
+
+function navigateToRandomDuck(){
+  window.location.href=`/?duck=${quacks[Math.floor(Math.random() * quacks.length)].link}`
+}
+
+
+let quack1 = document.getElementById("allDaDucks") 
+for (let quacker of quacks.slice(1,quacks.length).reverse()){ 
+  let duckEntry = document.createElement("div") 
+  duckEntry.innerHTML = template(quacker)
+  quack1.appendChild(duckEntry)
+}
+quack1 = document.getElementById("mainDuck")
+quack1.innerHTML = template(quacks[0])
+
+</script> </body> </html>

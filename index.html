@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Online Debugger</title>
+</head>
+<body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160703540-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160703540-2');
+</script>
+
+<h1>Online Debugger</h1>
+<p>Explain your problematic code to the duck. He understands. <a href="/ducks">Click Here to browse more ducks</a></p>
+<a href="/about.html"><img src = "img.jpg" id = "customduck" width="100%"/></a>
+<script>
+let duckImg = document.getElementById("customduck")
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+let duck= urlParams.get('duck')
+duck = duck || "duck_0.jpg"
+duckImg.src=`ducks/${duck}`
+
+</script>
+</body>
+</html>
