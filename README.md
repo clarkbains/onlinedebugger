@@ -3,4 +3,4 @@ This is a repository to house the online debugger. To add a new debugger, fork t
 
 Deployed using GH Sites.
 
-Visit us at [The Online Debugger](https://onlinedebugger.xyz/)
+Visit us at [The Online Debugger](http://onlinedebugger.xyz/)
